@@ -11,6 +11,8 @@ export async function POST(request) {
       "%" + queryValue + "%"
     } or location like ${"%" + queryValue + "%"}`;
 
+  console.log(page * LIMIT);
+
   const data = await client`select * from zithara where customer_name like ${
     "%" + queryValue + "%"
   } or location like ${"%" + queryValue + "%"} limit ${LIMIT} offset ${

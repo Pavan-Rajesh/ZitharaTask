@@ -6,7 +6,6 @@ import { usePagination } from "@mantine/hooks";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -108,10 +107,13 @@ const PaginationPage = () => {
    */
 
   const transFormDate = (dateWithTimeStamp) => {
-    const dateTime = new Date(dateWithTimeStamp);
-    const date = dateTime.toISOString().split("T")[0];
-    const time = dateTime.toISOString().split("T")[1].slice(0, -1);
+    // const dateTime = new Date(dateWithTimeStamp);
+    // const date = dateTime.toISOString().split("T")[0];
+    // const time = dateTime.toISOString().split("T")[1].slice(0, -1);
+    const date = dateWithTimeStamp.split("T")[0];
+    const time = dateWithTimeStamp.split("T")[1];
     return { date, time };
+    // return { date, time };
   };
 
   const transformData = ({ data, hasComeToEnd, count }) => {
